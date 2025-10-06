@@ -1,0 +1,100 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);
+
+    int size = 2 * n - 1;
+
+    for (int i = 0; i < size; i++) {
+        for (int j = 0; j < size; j++) {
+            int row_dist, col_dist;
+
+            // Manual absolute value for row distance from center
+            if (i > n - 1)
+                row_dist = i - (n - 1);
+            else
+                row_dist = (n - 1) - i;
+
+            // Manual absolute value for column distance from center
+            if (j > n - 1)
+                col_dist = j - (n - 1);
+            else
+                col_dist = (n - 1) - j;
+
+            int max_dist;
+
+            // Maximum of row_dist and col_dist
+            if (row_dist > col_dist)
+                max_dist = row_dist;
+            else
+                max_dist = col_dist;
+
+            printf("%d ", max_dist + 1);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
+recursive
+#include <stdio.h>
+
+// Recursive function to find nth term
+int nth_term(int n, int a, int b, int c) {
+    if (n == 1) return a;
+    if (n == 2) return b;
+    if (n == 3) return c;
+    return nth_term(n - 1, a, b, c) + nth_term(n - 2, a, b, c) + nth_term(n - 3, a, b, c);
+}
+
+int main() {
+    int n, a, b, c;
+    scanf("%d", &n);
+    scanf("%d %d %d", &a, &b, &c);
+
+    int result = nth_term(n, a, b, c);
+    printf("%d\n", result);
+
+    return 0;
+}
+
+marks
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+//Complete the following function.
+
+int marks_summation(int* marks, int number_of_students, char gender) {
+ int sum = 0;
+    int start_index = (gender == 'b') ? 0 : 1;
+
+    for (int i = start_index; i < number_of_students; i += 2) {
+        sum += marks[i];
+    }
+
+    return sum;
+}
+
+int main() {
+    int number_of_students;
+    char gender;
+    int sum;
+  
+    scanf("%d", &number_of_students);
+    int *marks = (int *) malloc(number_of_students * sizeof (int));
+ 
+    for (int student = 0; student < number_of_students; student++) {
+        scanf("%d", (marks + student));
+    }
+    
+    scanf(" %c", &gender);
+    sum = marks_summation(marks, number_of_students, gender);
+    printf("%d", sum);
+    free(marks);
+ 
+    return 0;
+}
