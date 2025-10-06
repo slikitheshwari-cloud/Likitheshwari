@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() 
+{  
+    int num,digit,temp,count;
+    
+    printf("\n enter number:");
+    scanf("%d",&num);
+    temp=num;
+    while(temp>0)
+    {
+        digit=temp%10;
+        if(digit==0)
+        {
+           count++;
+        }
+        temp=temp/10; 
+    }
+    if(count>1)
+    printf("\n the number is duck");
+    else 
+    printf("\n the number is not duck");
+    return 0;
+}

@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main()
+{
+    int num,temp,a,sum=0;
+    printf("\n enter the numer");
+    scanf("%d",&num);
+    temp=num;
+    while(num>0)
+    {
+        a=num%10;
+        sum=sum+a;
+        num=num/10;
+    }
+    if(temp%sum==0)
+    {
+        printf("\n the given number is niven or harshad number");
+        
+    }
+    else
+    {
+        printf("\n the given number is not niven or harsahd number");
+    }
+    return 0;
+}

@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main()
+{
+    int num,digit,nld,sq,sqld;
+    printf("\n enter number: ");
+    scanf("%d",&num);
+    sq=num*num;
+    nld=num%10;
+    sqld=sq%10;
+    if(nld==sqld)
+    {
+        printf("\n automorphic");
+    }
+    else
+    {
+        printf("\n not an automorphic");
+    }
+    return 0;
+}

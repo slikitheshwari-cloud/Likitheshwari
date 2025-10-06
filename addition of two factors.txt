@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include<math.h>
+int main()
+{
+    int a[2]={1,2},b[2]={3,2},gcd,n,d,min,num,den,i;
+    n=a[0]*b[1]+b[0]*a[1];
+    d=a[1]*b[1];
+    printf("\n numerator is: %d",n);
+    printf("\n denominator is: %d",d);
+    if(n<d)
+      min=n;
+    else
+      min=d;
+     printf("\n min is:%d ",min);
+    for(i=1;i<=min;i++)
+    {
+       if(n%i==0&&d%i==0) 
+       {
+           gcd=i;
+       }
+    }
+    printf("\n gcd id: %d",gcd);
+    num=n/gcd;
+    den=d/gcd;
+    printf("\n numerator is: %d",num);
+    printf("\n denominator is: %d",den);
+    return 0;
+}

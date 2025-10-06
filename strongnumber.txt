@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+    int num, sum = 0, r, i, fact, temp;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    temp = num;  // Store original number
+
+    while (num > 0) {
+        r = num % 10;    // Get last digit
+        fact = 1;        // Reset factorial for each digit
+
+        // Calculate factorial of r
+        for (i = 1; i <= r; i++) {
+            fact = fact * i;
+        }
+
+        sum = sum + fact;  // Add to sum
+        num = num / 10;    // Remove last digit
+    }
+
+    // Check if it's a strong number
+    if (sum == temp)
+        printf("\nThe given number is a strong number.\n");
+    else
+        printf("\nThe given number is not a strong number.\n");
+
+    return 0;
+}

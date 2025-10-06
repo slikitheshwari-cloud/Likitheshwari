@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() 
+{  
+    int num,sum=0,product=1,r;
+    printf("\n enter number:");
+    scanf("%d",&num);
+    while(num>0)
+    {
+        r=num%10;
+        sum=sum+r;
+        product=product*r;
+        num=num/10;
+    }
+    if(sum==product)
+    {
+    printf("spy");
+    }
+    else
+    {
+    printf("not a spy");
+    }
+    return 0;
+}

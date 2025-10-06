@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() 
+{  
+    int num,sq,sum=0,r;
+    
+    printf("\n enter number:");
+    scanf("%d",&num);
+    sq=(num*num);
+    while(sq>0)
+    {
+        r=sq%10;
+        sum=sum+r;
+        sq=sq/10;
+    }
+    if(sum==num)
+    printf("\n the number is neon");
+    else
+    printf("\n the number is not neon");
+    
+    return 0;
+}
