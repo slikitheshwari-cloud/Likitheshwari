@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main()
+{
+    char ch;
+    printf("\n enter a character");
+    scanf("%c",&ch);
+    if(ch>'A' && ch<'Z')
+    printf("\n capital");
+    else if(ch>'a' && ch<'z')
+    printf("\n lower");
+    else if(ch>'0' && ch<'9')
+    printf("\n digit");
+    else
+    printf("\n special character");
+    return 0;
+}
