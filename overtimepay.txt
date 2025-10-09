@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    int hours[10];     
+    int overtime;
+    int i;
+
+    printf("Enter hours worked by 10 employees:\n");
+
+    for(i = 0; i < 10; i++) {
+        printf("Employee %d: ", i + 1);
+        scanf("%d", &hours[i]);
+    }
+
+    printf("\nOvertime pay for each employee:\n");
+
+    for(i = 0; i < 10; i++) {
+        if(hours[i] > 40) {
+            overtime = (hours[i] - 40) * 12;  
+        } else {
+            overtime = 0;  
+        }
+        printf("Employee %d: %d\n", i + 1, overtime);
+    }
+
+    return 0;
+}
